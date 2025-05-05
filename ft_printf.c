@@ -6,7 +6,7 @@
 /*   By: molapoug <molapoug@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 17:56:01 by molapoug          #+#    #+#             */
-/*   Updated: 2025/04/14 15:52:33 by molapoug         ###   ########.fr       */
+/*   Updated: 2025/05/05 19:18:49 by molapoug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ int	ft_printf(const char *str, ...)
 				count += ft_base16(va_arg(args, char *));
 			else if (str[i] == 'i')
 				count += ft_putnbrpi(va_arg(args, int));
+			else if (str[i] == 'u')
+				count += convert_to_unsigned(va_arg(args, int));
+			else if (str[i] == 'x')
+				count += ft_base_hex_low(va_arg(args, int));
+			else if (str[i] == 'X')
+				count += ft_base_hex_upp(va_arg(args, int));
 		}
 		else
 			count += ft_putcharp(str[i]);
@@ -58,4 +64,10 @@ int	main(void)
 	ft_printf("%p\n", ptr);
 	printf("%i\n", 34);
 	ft_printf("%i\n", 34);
+	printf("%u\n", -42);
+	ft_printf("%u\n", -42);
+	printf("%x\n", 4242);
+	ft_printf("%x\n", 4242);
+	printf("%X\n", 4242);
+	ft_printf("%X\n", 4242);
 }

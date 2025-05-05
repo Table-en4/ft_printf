@@ -13,11 +13,11 @@
 #ft _printf / Makefile
 
 NAME = ft_printf
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror -I../libft
+CC = cc
+CFLAGS = -g -Wall -Wextra -Werror -I../libft
 TARGET = ft_printf.a
 
-SRC = ft_printf.c utilis.c
+SRC = ft_printf.c utilis.c ft_printf_unsigned.c ft_printf_px.c
 OBJ = $(SRC:.c=.o)
 #LIBFT_DIR = ../libft
 #LIBFT = $(LIBFT_DIR)/libft.a

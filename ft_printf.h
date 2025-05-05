@@ -6,19 +6,26 @@
 /*   By: molapoug <molapoug@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 18:09:10 by molapoug          #+#    #+#             */
-/*   Updated: 2025/04/13 17:51:18 by molapoug         ###   ########.fr       */
+/*   Updated: 2025/05/05 19:15:26 by molapoug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
 #include <unistd.h>
 #include <stdarg.h>
 #include <limits.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-/* toutes les fonctions int*/
-int     ft_putnbrp(int nbr);
-int     ft_putstrp(char *str);
-int     ft_putcharp(char c);
-int	    ft_putnbr_base(unsigned long nbr, char *base);
-int	    ft_base16(char *str);
-int     ft_putnbrpi(long nb);
+/* ---------------------- */
+/* | functions with int | */
+/* ---------------------- */
+int	ft_putnbrp(int nbr);
+int	ft_putstrp(char *str);
+int	ft_putcharp(char c);
+int	ft_putnbr_base(unsigned long nbr, char *base);
+int	ft_base16(char *str);
+int	ft_putnbrpi(long nb);
+int	convert_to_unsigned(unsigned int nb);
+int	ft_print_x_num(int base, char *output);
+int	ft_base_hex_low(int nbr);
+int	ft_base_hex_upp(int nbr);
