@@ -6,7 +6,7 @@
 /*   By: molapoug <molapoug@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 18:09:10 by molapoug          #+#    #+#             */
-/*   Updated: 2025/05/05 16:28:17 by molapoug         ###   ########.fr       */
+/*   Updated: 2025/05/06 10:37:50 by molapoug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_putnbrp(int nbr)
 {
-	long    nb;
 	unsigned int	i;
+	long			nb;
 
 	nb = nbr;
 	i = 0;
@@ -35,36 +35,10 @@ int	ft_putnbrpi(long nb)
 	unsigned int	i;
 
 	i = 0;
-	/*if (nb < 0)
-	{
-		i += ft_putcharp('-');
-		nb = -nb;
-	}*/
 	if (nb >= 10)
 		i += ft_putnbrpi(nb / 10);
 	i += ft_putcharp(nb % 10 + '0');
 	return (i);
-}
-
-int	ft_putstrp(char *str)
-{
-	int	i;
-	int	count;
-
-	i = 0;
-	count = 0;
-	while (str[i])
-	{
-		count += ft_putcharp(str[i]);
-		i++;
-	}
-	return (count);
-}
-
-int	ft_putcharp(char c)
-{
-	write(1, &c, 1);
-	return (1);
 }
 
 int	ft_putnbr_base(unsigned long nbr, char *base)

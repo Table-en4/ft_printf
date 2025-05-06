@@ -6,15 +6,18 @@
 /*   By: molapoug <molapoug@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 18:09:10 by molapoug          #+#    #+#             */
-/*   Updated: 2025/05/05 19:15:26 by molapoug         ###   ########.fr       */
+/*   Updated: 2025/05/06 18:21:13 by molapoug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdarg.h>
-#include <limits.h>
-#include <stdio.h>
-#include <stdlib.h>
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+
+# include <unistd.h>
+# include <stdarg.h>
+# include <limits.h>
+# include <stdio.h>
+# include <stdlib.h>
 
 /* ---------------------- */
 /* | functions with int | */
@@ -26,6 +29,7 @@ int	ft_putnbr_base(unsigned long nbr, char *base);
 int	ft_base16(char *str);
 int	ft_putnbrpi(long nb);
 int	convert_to_unsigned(unsigned int nb);
-int	ft_print_x_num(int base, char *output);
 int	ft_base_hex_low(int nbr);
 int	ft_base_hex_upp(int nbr);
+
+#endif

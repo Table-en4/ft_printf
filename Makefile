@@ -10,37 +10,49 @@
 # #
 #**************************************************************************** #
 
-#ft _printf / Makefile
-
-NAME = ft_printf
+NAME = libftprintf.a
 CC = cc
-CFLAGS = -g -Wall -Wextra -Werror -I../libft
-TARGET = ft_printf.a
+CFLAGS = -Wall -Wextra -Werror
+AR = ar rcs
+RM = rm -f
 
-SRC = ft_printf.c utilis.c ft_printf_unsigned.c ft_printf_px.c
+SRC = ft_printf.c ft_printf_px.c \
+      ft_printf_unsigned.c utilis.c \
+      ft_print_str.c
+
 OBJ = $(SRC:.c=.o)
-#LIBFT_DIR = ../libft
-#LIBFT = $(LIBFT_DIR)/libft.a
 
-.PHONY: all clean fclean re
+# Color codes
+GREEN = \033[0;32m
+YELLOW = \033[0;33m
+RED = \033[0;31m
+BLUE = \033[0;34m
+PURPLE = \033[0;35m
+CYAN = \033[0;36m
+NC = \033[0m # No Color
 
-all: $(LIBFT) $(NAME) $(TARGET)
+all: $(NAME)
 
-$(TARGET): $(OBJ) $(LIBFT)
-	ar rcs $@ $(OBJ)
+$(NAME): $(OBJ)
+	@echo "$(YELLOW)😎🤙Building$(PURPLE) $(NAME)"
+	@$(AR) $(NAME) $(OBJ)
 
-$(LIBFT):
-	$(MAKE) -C $(LIBFT_DIR)
-
-$(NAME): $(OBJ) $(LIBFT)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(LIBFT)
+%.o: %.c ft_printf.h
+	@echo "$(CYAN)🔥Compiling$(GREEN) $<"
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
-	$(MAKE) -C $(LIBFT_DIR) clean
+	@echo "$(CYAN)🧹Cleaning object files$(NC)"
+	@$(RM) $(OBJ)
 
 fclean: clean
-	rm -f $(NAME) $(TARGET)
-	$(MAKE) -C $(LIBFT_DIR) fclean
+	@echo "$(CYAN)🚮Cleaning$(RED) $(NAME)"
+	@$(RM) $(NAME)
+
+run: $(SRC)
+	@echo "$(GREEN)🔧Building ./ft_printf$(NC)"
+	@$(CC) $(CFLAGS) $(SRC) -o ft_printf
 
 re: fclean all
+
+.PHONY: all clean fclean re bonus
