@@ -6,7 +6,7 @@
 /*   By: molapoug <molapoug@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 17:56:01 by molapoug          #+#    #+#             */
-/*   Updated: 2025/05/06 18:15:54 by molapoug         ###   ########.fr       */
+/*   Updated: 2025/05/07 14:26:45 by molapoug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,14 @@ int	ft_printf(const char *str, ...)
 	return (count);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	void	*ptr;
+	int		result;
+	int		resuld;
 
+	result = ft_printf(0);
+	resuld = printf(0);
 	ptr = (void *)"42";
 	ft_printf("%s%d\n", "je test mes fonctions : ", 42);
 	printf("%s%d\n", "je test mes fonctions : ", 42);
@@ -89,8 +93,6 @@ int	main(void)
 	ft_printf("%x\n", 1234567891);
 	printf("%X\n", 4242);
 	ft_printf("%X\n", 4242);
-	int	result = ft_printf(0);
-	int	resuld = printf(0);
-	ft_printf("%d\n",result);
-	printf("%d\n",resuld);
-}
+	ft_printf("%d\n", result);
+	printf("%d\n", resuld);
+}*/
